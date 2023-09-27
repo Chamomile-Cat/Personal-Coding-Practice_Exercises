@@ -9,15 +9,11 @@ corpus = [
  'This the second sentence'
 ]
 
-vectorizer = CountVectorizer(stop_words='english')  # Initializie CountVector Object
+vectorizer = CountVectorizer(stop_words='english', lowercase=True, strip_accents=True, analyzer='word')  # Initializie CountVector Object
 Xtrain = vectorizer.fit_transform(corpus) # Create count vectors on training data
 
 # print(Xtrain) # (sentence index in corpus, specific unique word), how many times the word appears 
-# print(vectorizer.get_feature_names_out())
+# print(vectorizer.get_feature_names_out()) # returns vocabulary of corpus
 
-Xtest = vectorizer.transform(corpus) # Transform the training corpus
-print(Xtest)
-
-
-
+Xtest = vectorizer.transform(corpus) # Use vocabulary at fit_transform to return a new (or same) matrix
 
