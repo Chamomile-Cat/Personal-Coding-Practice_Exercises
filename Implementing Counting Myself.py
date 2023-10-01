@@ -4,8 +4,9 @@ corpus = input('Enter in your data with commas separating each sentence: ')
 corpus = corpus.lower()
 corpus = corpus.split(", ")
 
-unique_words = set() # Set of unique words
-total_tokens = [] # List of all tokens
+unique_words = set() # For set  of unique words
+total_tokens = [] # For list of all tokens
+
 for sentence in corpus: # Create
     words = sentence.split()
     unique_words.update(words)
